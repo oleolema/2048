@@ -1,0 +1,247 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.main {
+    width: 80vh;
+    height: 80vh;
+    align-self: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    outline: none;
+    border: 6px solid rgb(187, 173, 160);
+    position: relative;
+    user-select: none;
+    border-radius: 6px;
+    background-color: rgb(205, 193, 180);
+    box-sizing: border-box;
+}
+
+.table .row {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.table .col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* background-color: rgb(187, 173, 160); */
+    /* padding: 5px; */
+}
+
+/* .box {
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    font-weight: bold;
+} */
+
+
+.box {
+    width: calc(80vh/4.6);
+    height: calc(80vh/4.6);
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    /* outline: 6px solid rgb(187, 173, 160); */
+    border: 10px solid rgb(187, 173, 160);
+
+}
+
+.scaleStart {
+    transform: scale(0.1);
+}
+
+.scaleEnd {
+    transform: scale(1);
+}
+
+.transition {
+    transition: transform 0.3s, background 0.3s;
+}
+
+.noTransition {
+    transition: '';
+}
+
+.box-inner {
+    /* z-index: -1; */
+}
+
+.box-outer {
+    z-index: 1;
+    border-radius: 18px;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.score-container,
+.best-container {
+    position: relative;
+    display: inline-block;
+    background: #bbada0;
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.score-container:after {
+    content: "Score";
+}
+
+.score-container:after,
+.best-container:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da;
+}
+
+
+.restart-button {
+    display: inline-block;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    float: right;
+}
+
+.game-over-show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.game-over-hidden {
+    opacity: 0;
+    transform: scale(0);
+    
+}
+
+.game-message.game-won,
+.game-message.game-over {
+    display: block;
+}
+
+.game-message {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.48);
+    z-index: 100;
+    padding-top: 40px;
+    text-align: center;
+    /* transition: transform 0.5s; */
+    transition: transform 0.5s, opacity 2s;
+}
+
+
+.game-message p {
+    font-size: 60px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 222px;
+    color: #8f7a66;
+}
+
+.game-message a {
+    display: inline-block;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    cursor: pointer;
+    margin-left: 9px;
+}
+
+a {
+    color: #776e65;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .box {
+        width: calc(90vw/4.6);
+        height: calc(90vw/4.6);
+        font-size: 2em;
+        top: -3px;
+        left: -3px;
+        border: 6px solid rgb(187, 173, 160);
+    }
+
+    .box-outer {
+        z-index: 1;
+        border-radius: 12px;
+
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
