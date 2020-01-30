@@ -1,7 +1,6 @@
 class Calculate {
 
     tiemr1 = 1;
-    timer2 = 1; 
     score = {
         val: 0,
         ele: document.querySelector('.score'),
@@ -28,7 +27,7 @@ class Calculate {
 
     //     // main.delClass(box2.ele, `pos${box2.y}-${box2.x}`);
     //     // main.addClass(box2.ele, `pos${box1.y}-${box1.x}`);
-    //     console.info(box2);
+    //     //console.info(box2);
     //     // box2 = {
     //     //     ...box2,
     //     //     x: box1.x,
@@ -71,7 +70,7 @@ class Calculate {
         main.replaceClass(box2.ele, `pos${box2Y}-${box2X}`, `pos${box1Y}-${box1X}`);
 
         main.replaceClass(box1.ele, `pos${box1Y}-${box1X}`, `pos${box2Y}-${box2X}`);
-        console.info(main.create)
+        //console.info(main.create)
         if (box1Val !== 0) {
             this.score.val += box2.val;
             this.score.ele.innerHTML = this.score.val;
@@ -91,8 +90,7 @@ class Calculate {
             //     }, 50);
             // }, 200);
             let fs = main.create.media.fontSize;
-            clearTimeout(this.timer2);
-            this.timer2 = setTimeout(() => {
+            setTimeout(() => {
                 box2.ele.style.fontSize = `${fs + 2}em`;
                 setTimeout(() => {
                     box2.ele.style.fontSize = `${fs}em`;
@@ -108,7 +106,7 @@ class Calculate {
             main.replaceClass(box2.ele, 'transition', 'noTransition');
         }, 300);
 
-        console.info(box2.val);
+        //console.info(box2.val);
         this.table[box1Y][box1X] = box2;
         // this.table[box2Y][box2X] = box1;
         main.create.add(box1);
@@ -283,7 +281,7 @@ class Calculate {
                 }
             }
         }
-        console.info(t);
+        //console.info(t);
         return t;
     }
 
@@ -375,7 +373,7 @@ class Calculate {
                 }
             }
         }
-        console.info(t);
+        //console.info(t);
         return t;
     }
 

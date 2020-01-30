@@ -161,7 +161,7 @@ header {
 .game-over-hidden {
     opacity: 0;
     transform: scale(0);
-    
+
 }
 
 .game-message.game-won,

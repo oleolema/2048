@@ -56,7 +56,7 @@
         }));
         calculate.createRandomBox();
 
-        // console.info(table, table[0][0].ele);
+        // //console.info(table, table[0][0].ele);
     }
 
     create.createTable = (ta) => {
@@ -89,7 +89,7 @@
         size.boxH = table[0][0].ele.offsetHeight;
         size.colW = table[0][0].ele.parentElement.offsetWidth;
         size.colH = table[0][0].ele.parentElement.offsetHeight;
-        console.info(size);
+        //console.info(size);
     };
 
     create.createStyle = () => {
@@ -111,7 +111,7 @@
     create.reloadTable = (ta) => {
         for (let i = 0; i < ta.length; i++) {
             for (let j = 0; j < ta[i].length; j++) {
-                // console.info(table[i][j].val);
+                // //console.info(table[i][j].val);
                 table[i][j].ele.innerHTML = table[i][j].val === 0 ? "" : table[i][j].val;
                 table[i][j].ele.style.backgroundColor = Animation.getColor(table[i][j].val);
                 table[i][j].ele.style.color = Animation.getFontColor(table[i][j].val);
@@ -120,9 +120,9 @@
     }
 
     create.reload = (list) => {
-        console.info(list);
+        //console.info(list);
         for (let i = 0; i < list.length; i++) {
-            console.info(list[i]);
+            //console.info(list[i]);
             let {
                 y,
                 x
@@ -143,7 +143,7 @@
 
 
     create.add = (box) => {
-        // console.info(box);
+        // //console.info(box);
         let {
             y,
             x
@@ -166,7 +166,7 @@
 
     //重新开始
     restartButton.onclick = (e) => {
-        console.info(e);
+        //console.info(e);
         create.newGame();
         // main.replaceClass(gameOverHtml, 'game-over-hidden', 'game-over-show');
     };
@@ -210,7 +210,7 @@
     }
 
     window.onkeydown = (e) => {
-        console.info(e.key);
+        //console.info(e.key);
 
         switch (e.key.toLowerCase()) {
             case "d":
@@ -245,7 +245,7 @@
     manager.add(Swipe);
 
     manager.on('swipe', function (e) {
-        console.info(e.offsetDirection);
+        //console.info(e.offsetDirection);
         switch (e.offsetDirection) {
             //left
             case 2:
