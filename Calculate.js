@@ -1,6 +1,7 @@
 class Calculate {
 
     tiemr1 = 1;
+    timer2 = 1; 
     score = {
         val: 0,
         ele: document.querySelector('.score'),
@@ -75,26 +76,42 @@ class Calculate {
             this.score.val += box2.val;
             this.score.ele.innerHTML = this.score.val;
 
-            //box2.ele.style.transform = `scale(3)  translate3d(${box2X * main.create.size.colW}px,${box2Y * main.create.size.colH}px,0)`;
+            // setTimeout(() => {
+            //     //box2.ele.style.transform = `scale(1.2)  translate3d(${box1X * main.create.size.colW}px,${box1Y * main.create.size.colH}px,0)`;
 
-            setTimeout(() => {
-                box2.ele.style.backgroundColor = "red";
+            //     setTimeout(() => {
+            //         // box2.ele.style.transform = ``;
+            //     }, 50);
+
+            // }, 100);
+            // setTimeout(() => {
+            //     box2.ele.style.backgroundColor = "red";
+            //     setTimeout(() => {
+            //         box2.ele.style.backgroundColor = Animation.getColor(box2.val);
+            //     }, 50);
+            // }, 200);
+            let fs = main.create.media.fontSize;
+            clearTimeout(this.timer2);
+            this.timer2 = setTimeout(() => {
+                box2.ele.style.fontSize = `${fs + 2}em`;
                 setTimeout(() => {
-                    box2.ele.style.backgroundColor = Animation.getColor(box2.val);
+                    box2.ele.style.fontSize = `${fs}em`;
                 }, 100);
-            }, 20);
+
+            }, 150);
         }
 
 
 
         clearTimeout(this.tiemr1);
-
         this.timer1 = setTimeout(() => {
             main.replaceClass(box2.ele, 'transition', 'noTransition');
         }, 300);
+
         console.info(box2.val);
         this.table[box1Y][box1X] = box2;
-        this.table[box2Y][box2X] = box1;
+        // this.table[box2Y][box2X] = box1;
+        main.create.add(box1);
     };
 
     //检查是否可以移动

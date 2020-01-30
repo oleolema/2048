@@ -4,7 +4,7 @@ function Animation(table) {
 
 Animation.colors = {
     '-1': "rgb(205, 193, 180)",
-    0: "#00000000",
+    0: "rgba(205, 193, 180,0)",
     2: "#fbddb4",
     4: "rgb(255, 191, 106)",
     8: "rgb(236, 135, 0)",

@@ -80,7 +80,7 @@ body {
 }
 
 .transition {
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.2s, background 0.2s, font-size 0.3s;
 }
 
 .noTransition {
@@ -226,7 +226,7 @@ a {
         font-size: 2em;
         top: -3px;
         left: -3px;
-        border: 6px solid rgb(187, 173, 160);
+        border: 9px solid rgb(187, 173, 160);
     }
 
     .box-outer {

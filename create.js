@@ -24,6 +24,14 @@
 
     let table;
 
+    create.media = {
+        maxWidth: 600,
+        fontSize: 3,
+    };
+    if (innerWidth <= create.media.maxWidth) {
+
+        create.media.fontSize = 2;
+    }
 
 
 
@@ -127,23 +135,46 @@
                 list[i].ele.style.transform = ``
                 setTimeout(() => {
                     main.replaceClass(list[i].ele, 'transition', 'noTransition');
-                }, 300);
+                }, 200);
             }, 20);
             table[y][x] = list[i];
         }
     }
 
+
+    create.add = (box) => {
+        // console.info(box);
+        let {
+            y,
+            x
+        } = box;
+        box.pele.innerHTML = `
+        <div class="box box-outer transition pos${y}-${x}" style="background:${Animation.getColor(box.val)};color:${Animation.getFontColor(box.val)}">${box.val === 0 ? "" :box.val}</div>`
+        box.ele = box.pele.children[0];
+        // box.ele.style.transform = `scale(0.1)  translate3d(${x * size.colW}px,${y * size.colH}px,0)`
+        // setTimeout(() => {
+        //     box.ele.style.transform = ``
+        //     setTimeout(() => {
+        //         main.replaceClass(box.ele, 'transition', 'noTransition');
+        //     }, 200);
+        // }, 20);
+        table[y][x] = box;
+    }
+
     create.newGame();
     create.createStyle();
 
+    //重新开始
     restartButton.onclick = (e) => {
         console.info(e);
         create.newGame();
         // main.replaceClass(gameOverHtml, 'game-over-hidden', 'game-over-show');
     };
 
+    //游戏结束，重新开始
     retryButton.onclick = (e) => {
         main.replaceClass(gameOverHtml, 'game-over-show', 'game-over-hidden');
+        create.newGame();
     }
 
     let operator = (type) => {
@@ -170,7 +201,7 @@
             //生成新元素
             setTimeout(() => {
                 calculate.createRandomBox();
-            }, 200);
+            }, 100);
             create.isOver = !calculate.checkCanMove();
             if (create.isOver) {
                 main.replaceClass(gameOverHtml, 'game-over-hidden', 'game-over-show');
