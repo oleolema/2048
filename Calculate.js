@@ -168,16 +168,17 @@ class Calculate {
             return;
         }
         list = list.sort(() => Math.random() - 0.5);
-        let randomList = [list[0]];
+        let randomList = [{
+            ...list[0],
+            val: 2,
+            color: Animation.getColor(2),
+        }];
         if (list[1]) {
-            randomList.push(list[1]);
-        }
-        for (let i = 0; i < randomList.length; i++) {
-            randomList[i] = {
-                ...randomList[i],
-                val: 2,
-                color: Animation.getColor(2),
-            }
+            randomList.push({
+                ...list[1],
+                val: 4,
+                color: Animation.getColor(4),
+            });
         }
 
         main.create.reload(randomList);
